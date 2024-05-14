@@ -71,6 +71,11 @@ export class ForbiddenLandsCharacterSheet extends ForbiddenLandsActorSheet {
 			return this.rollConsumable(consumable);
 		});
 
+		html.find(".roll-rawMaterial").click((ev) => {
+			const rawMaterial = $(ev.currentTarget).data("rawMaterial");
+			return this.rollRawMaterial(rawMaterial);
+		});
+
 		html.find(".roll-reputation").click(() => this.rollReputation());
 
 		html.find(".roll-pride").click(() => this.rollPride());
@@ -132,6 +137,11 @@ export class ForbiddenLandsCharacterSheet extends ForbiddenLandsActorSheet {
 		) {
 			FBLRollHandler.decreaseConsumable(message.id);
 		}
+	}
+
+	/* TODO : roll for raw material as consumable */
+	async rollRawMaterial (indetifier) {
+
 	}
 
 	async rollPride() {

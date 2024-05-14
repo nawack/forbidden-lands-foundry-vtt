@@ -20,6 +20,29 @@
 			</div>
 		</div>
 	</div>
+	<div class="weight">
+        <label>{{localize "GEAR.WEIGHT"}}</label>
+        <select name="system.weight">
+            {{#select system.weight}}
+            <option value="tiny">{{localize "WEIGHT.TINY"}}</option>
+            <option value="light">{{localize "WEIGHT.LIGHT"}}</option>
+            <option value="regular">{{localize "WEIGHT.REGULAR"}}</option>
+            <option value="heavy">{{localize "WEIGHT.HEAVY"}}</option>
+            {{/select}}
+        </select>
+    </div>
+	<div class="quantity">
+		<label>{{localize "ITEM.QUANTITY"}}</label>
+		<select name="system.quantity" data-dtype="Number">
+			{{#select system.quantity}}
+			<option value="0">—</option>
+			<option value="1">D6</option>
+			<option value="2">D8</option>
+			<option value="3">D10</option>
+			<option value="4">D12</option>
+			{{/select}}
+		</select>
+	</div>
 	<div class="raw-materials">
 		<label>{{localize "BUILDING.RAW_MATERIALS"}}</label>
 		<input name="system.rawMaterials" type="text" value="{{system.rawMaterials}}" />

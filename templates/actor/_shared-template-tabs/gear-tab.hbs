@@ -28,8 +28,18 @@
 						</td>
 						<td>{{fblLocalize item.type}}</td>
 						{{#if (eq item.type 'rawMaterial')}}
-							<td><input class="quantity" type="number" data-dtype="Number" value="{{item.system.quantity}}"
-									title="{{localize "ITEM.QUANTITY"}}" /></td>
+							<td>
+								<i class="fas fa-dice roll-rawMaterial" data-rawMaterial="{{item}}"></i>
+								<select class="quantity" data-dtype="Number" title="{{localize "ITEM.QUANTITY"}}">
+									{{#select item.system.quantity}}
+									<option value="0">—</option>
+									<option value="1">D6</option>
+									<option value="2">D8</option>
+									<option value="3">D10</option>
+									<option value="4">D12</option>
+									{{/select}}
+								</select>
+							</td>
 						{{else}}
 							<td class="{{isBroken item}}"
 								title="{{localize (ternary (eq item.type 'armor') "ARMOR.RATING"  "GEAR.BONUS")}}">
